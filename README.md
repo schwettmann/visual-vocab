@@ -1,3 +1,5 @@
-# Toward a Visual Concept Vocabulary for GAN latent space
+# Toward a Visual Concept Vocabulary for GAN Latent Space
 
-Coming soon! 
+_Coming soon!_
+
+: Paper | poster | video | examples  
