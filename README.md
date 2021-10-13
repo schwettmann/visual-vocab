@@ -3,8 +3,8 @@
 ![teaser_final_cmu-01](https://user-images.githubusercontent.com/26309530/137186304-0c89f9bc-3f74-4b93-8972-245605cad2a7.png)
 
 Sarah Schwettmann, Evan Hernandez, David Bau, Samuel Klein, Jacob Andreas, Antonio Torralba<br>
-[Paper](https://openaccess.thecvf.com/content/ICCV2021/html/Schwettmann_Toward_a_Visual_Concept_Vocabulary_for_GAN_Latent_Space_ICCV_2021_paper.html)  | 
-[Website]( https://visualvocab.csail.mit.edu/) | 
+[Paper](https://openaccess.thecvf.com/content/ICCV2021/html/Schwettmann_Toward_a_Visual_Concept_Vocabulary_for_GAN_Latent_Space_ICCV_2021_paper.html)  |
+[Website]( https://visualvocab.csail.mit.edu/) |
 [arxiv](https://arxiv.org/pdf/2110.04292.pdf) <br>
 
 This repository contains code for finding layer-selective directions, distilling them, and loading the vocabulary of visual concepts in BigGAN used in the original paper.
@@ -39,7 +39,7 @@ To download any of the various annotated directions from the paper, use `dataset
 from visualvocab import datasets
 
 # Download layer-selective directions and annotations used for distilling single-word directions:
-dataset = datasets.load('lsd_2x')
+dataset = datasets.load('lsd')
 
 # Download distilled directions for a specific BigGAN-Places365 category:
 dataset = datasets.load('distilled_cottage')

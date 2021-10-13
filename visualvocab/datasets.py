@@ -183,10 +183,10 @@ DATASETS_URLS = {
     # 'ganspace_10x': f'{DATASETS_BASE_URL}/ganspace_10x.zip',
     # 'random_10x': f'{DATASETS_BASE_URL}/random_10x.zip',
 
-    # The big dataset of annotated LSDs that was used to distil directions.
-    # Each direction has 2 annotations.
-    # TODO(evandez): Uncomment once this is posted.
-    # 'lsd_2x': f'{DATASETS_BASE_URL}/lsd_2x.zip',
+    # The big dataset of the 1280 annotated LSDs that were used to distil
+    # single-concept directions. Each direction appears 4 times in the dataset
+    # because each was visualized and annotated once per category.
+    'lsd': f'{DATASETS_BASE_URL}/lsd.zip',
 
     # Directions distilled from the lsd_2x dataset, using ALL the LSDs (_all)
     # or using only LSDs that were visualized in a specific category
