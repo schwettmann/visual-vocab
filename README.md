@@ -6,9 +6,9 @@ Sarah Schwettmann, Evan Hernandez, David Bau, Samuel Klein, Jacob Andreas, Anton
 https://arxiv.org/pdf/2110.04292.pdf
 website: https://visualvocab.csail.mit.edu/
 
-**Notice:** This repository is under active development! Expect instability until at least October 25th, 2021.
-
 This repository contains code for finding layer-selective directions, distilling them, and loading all of the BigGAN directions used in the original paper.
+
+**Notice:** This repository is under active development! Expect instability until at least October 25th, 2021.
 
 ## Installation
 
