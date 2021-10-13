@@ -1,4 +1,6 @@
 # Toward a Visual Concept Vocabulary for GAN Latent Space
+**Code and data from the ICCV 2021 paper**
+![teaser_final_cmu-01](https://user-images.githubusercontent.com/26309530/137186304-0c89f9bc-3f74-4b93-8972-245605cad2a7.png)
 
 **Notice:** This repository is under active development! Expect instability until at least October 25th, 2021.
 
