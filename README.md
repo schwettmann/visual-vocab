@@ -39,13 +39,13 @@ To download any of the various annotated directions from the paper, use `dataset
 from visualvocab import datasets
 
 # Download layer-selective directions and annotations used for distilling single-word directions:
-dataset = datasets.load('lsd')
-
-# Download distilled directions for a specific BigGAN-Places365 category:
-dataset = datasets.load('distilled_cottage')
+dataset = datasets.load('lsd_all')
 
 # Download distilled directions for all BigGAN-Places365 categories:
 dataset = datasets.load('distilled_all')
+
+# Download distilled directions for a specific BigGAN-Places365 category:
+dataset = datasets.load('distilled_cottage')
 ```
 See the module for a full list of available annotated directions.
 
