@@ -176,17 +176,17 @@ class AnnotatedDirectionsDataset(data.Dataset[AnnotatedDirection]):
 
 DATASETS_BASE_URL = 'https://visualvocab.csail.mit.edu'
 DATASETS_URLS = {
-    # Annotated directions used to compare LSDs to baseline direction-finding
-    # methods. Each direction has 10 language descriptions.
-    # TODO(evandez): Uncomment once these are posted.
-    # 'lsd_10x': f'{DATASETS_BASE_URL}/lsd_10x.zip',
-    # 'ganspace_10x': f'{DATASETS_BASE_URL}/ganspace_10x.zip',
-    # 'random_10x': f'{DATASETS_BASE_URL}/random_10x.zip',
-
     # The big dataset of the 1280 annotated LSDs that were used to distil
     # single-concept directions. Each direction appears 4 times in the dataset
     # because each was visualized and annotated once per category.
-    'lsd': f'{DATASETS_BASE_URL}/lsd.zip',
+    'lsd_all': f'{DATASETS_BASE_URL}/lsd_all.zip',
+
+    # Same as above, but only including annotations for specific directories,
+    # if that's your thing.
+    'lsd_cottage': f'{DATASETS_BASE_URL}/lsd_cottage.zip',
+    'lsd_kitchen': f'{DATASETS_BASE_URL}/lsd_kitchen.zip',
+    'lsd_lake': f'{DATASETS_BASE_URL}/lsd_lake.zip',
+    'lsd_medina': f'{DATASETS_BASE_URL}/lsd_medina.zip',
 
     # Directions distilled from the lsd_2x dataset, using ALL the LSDs (_all)
     # or using only LSDs that were visualized in a specific category
