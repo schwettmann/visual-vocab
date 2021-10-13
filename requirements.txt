@@ -6,7 +6,11 @@ isort==5.9.3
 mccabe==0.6.1
 mypy==0.910
 mypy-extensions==0.4.3
+numpy==1.21.2
 packaging==21.0
+pandas==1.3.3
+patsy==0.5.2
+Pillow==8.3.2
 pluggy==1.0.0
 py==1.10.0
 pycodestyle==2.7.0
@@ -14,7 +18,15 @@ pydocstyle==6.1.1
 pyflakes==2.3.1
 pyparsing==2.4.7
 pytest==6.2.5
+python-dateutil==2.8.2
+pytz==2021.3
+scipy==1.7.1
+six==1.16.0
 snowballstemmer==2.1.0
+statsmodels==0.13.0
 toml==0.10.2
+torch==1.9.1
+torchvision==0.10.1
+tqdm==4.62.3
 typing-extensions==3.10.0.2
 yapf==0.31.0
