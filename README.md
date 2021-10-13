@@ -3,8 +3,9 @@
 ![teaser_final_cmu-01](https://user-images.githubusercontent.com/26309530/137186304-0c89f9bc-3f74-4b93-8972-245605cad2a7.png)
 
 Sarah Schwettmann, Evan Hernandez, David Bau, Samuel Klein, Jacob Andreas, Antonio Torralba
-https://arxiv.org/pdf/2110.04292.pdf
-website: https://visualvocab.csail.mit.edu/
+[Paper](https://openaccess.thecvf.com/content/ICCV2021/html/Schwettmann_Toward_a_Visual_Concept_Vocabulary_for_GAN_Latent_Space_ICCV_2021_paper.html) <br> 
+[Website]( https://visualvocab.csail.mit.edu/) <br>
+[arxiv](https://arxiv.org/pdf/2110.04292.pdf) <br>
 
 This repository contains code for finding layer-selective directions, distilling them, and loading all of the BigGAN directions used in the original paper.
 
