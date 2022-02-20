@@ -1,4 +1,4 @@
-"""Datasets for reading directions and annotations."""
+"""Datasets for reading directions and annotations from the paper."""
 import collections
 import csv
 import pathlib
