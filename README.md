@@ -74,7 +74,7 @@ savepath = '/mydirectory/LSDs/'    # set to your own path where you want to save
 
 z, _ = utils.prepare_z_y(batch_size, G.dim_z, n_classes, device=device, z_var=0.5)   #generate a random z to start 
 
-directions = optimize_lsds(z, num_dirs_per_layer, num_samples, start_layer, end_layer, visualize, learning_rate, new_class, savedirs, savepath)
+directions = generate_lsds.optimize_lsds(z, num_dirs_per_layer, num_samples, start_layer, end_layer, visualize, learning_rate, new_class, savedirs, savepath)
 
 ```
 Requirements: `generate_lsds` loads a pretrained BigGAN and finds directions inside its latent space. By default this code runs on BigGAN-Places. It is easy to modify it to instead run on BigGAN-Imagenet (change `pretrained = 'places365'` to `pretrained = 'places365'`). We also encourage you to try this method with your own pretrained models, but that will require more customization. 
