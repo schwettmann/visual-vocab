@@ -7,7 +7,7 @@
 [Sarah Schwettmann](https://cogconfluence.com), [Evan Hernandez](https://evandez.com/), [David Bau](http://davidbau.com/), [Samuel Klein](http://blogs.harvard.edu/sj/), [Jacob Andreas](https://www.mit.edu/~jda/), [Antonio Torralba](https://groups.csail.mit.edu/vision/torralbalab/) <br>
 MIT CSAIL, MIT BCS
 
-This repository contains code for loading the vocabulary of visual concepts in BigGAN used in the original paper and reproducing our results. Additionally we provide code for generating new layer-selective directions, and disentangling them into a vocabulary of visual concepts using your own corpus of annotations. 
+This repository contains code for loading and visualizing the vocabulary of visual concepts in BigGAN used in the original paper and reproducing our results. Additionally we provide code for generating new layer-selective directions that can be disentangled into a vocabulary of visual concepts using your own corpus of annotations.
 
 ## Overview
 
@@ -34,7 +34,7 @@ pip3 install -r requirements.txt
 
 ## Usage
 
-To download any of the various annotated directions from the paper, use `datasets.load` submodule. It downloads and parses the annoated directions. Example usage:
+To download the vocabulary from the paper, use the `datasets.load` submodule. It downloads and parses the annoated directions. Example usage:
 ```python
 from visualvocab import datasets
 
@@ -47,7 +47,40 @@ dataset = datasets.load('distilled_all')
 # Download distilled directions for a specific BigGAN-Places365 category:
 dataset = datasets.load('distilled_cottage')
 ```
-See the module for a full list of available annotated directions.
+See the module for a full list of available annotated directions. You can experiment with loading and visualizing our precomputed vocabulary in the demo: ![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg). 
+
+### Generating your own layer-selective directions
+In addition to downloading our visual concepts and associated directions, you may also want to generate your own. Why? There are multiple reasons to want to constuct your own visual concept vocabulary:
+  1. To capture concepts shared by a model's representation space and _your own perception_, or that of a particular group of observers (e.g. experts in some area).
+  2. To compare concepts represented by different models, or models trained on different datasets.
+ 
+Our method for extracting a set of disentangled, human-recognizable concepts works with any corpus of annotated directions; however, we achived best results (a more diverse vocabulary with higher agreement between annotators) when using the procedure we describe for obtaining an initial set of _layer-selective directions_ (LSDs) for annotation. We provide code for generating new LSDs in the `generate_lsds` module. 
+
+Example usage:
+```python
+from visualvocab import generate_lsds 
+
+#Training parameters 
+batch_size = 1                     # for generator, do not change this
+new_class  = 203                   # Places 365 image class (change)
+learning_rate = 0.01               # you can also try changing this as well
+num_dirs_per_layer = 4             # number of LSDs you want to generate per layer
+num_samples = 2000                 # num samples for optimization. Training on 2000 samples should get you a desired result.
+start_layer = 2                    # layer where you want to start generating LSDs (higher layer numbers are closer to image output)
+end_layer = 0                      # last layer for which you want to find LSDs. leave end_layer = 0 and you will calcualate LSDs for all layers before (&incl.) start layer. 
+visualize = True                   # do you want to visualize each direction after it is generated? 
+savedirs = False                   # do you want to save the directions? 
+savepath = '/mydirectory/LSDs/'    # set to your own path where you want to save the directions
+z, _ = utils.prepare_z_y(batch_size, G.dim_z, n_classes, device=device, z_var=0.5)   #generate a random z to start 
+
+directions = optimize_lsds(z, num_dirs_per_layer, num_samples, start_layer, end_layer, visualize, learning_rate, new_class, savedirs, savepath)
+
+```
+Requirements: `generate_lsds` loads a pretrained BigGAN and finds directions inside its latent space. By default this code runs on BigGAN-Places. It is easy to modify it to instead run on BigGAN-Imagenet (change `pretrained = 'places365'` to `pretrained = 'places365'`). We also encourage you to try this method with your own pretrained models, but that will require more customization. 
+
+## Example Results
+
+![example concepts from the paper](https://github.com/schwettmann/visual-vocab/blob/main/visualvocab/example_concepts.jpg?raw=true)
 
 ## Citation
 
