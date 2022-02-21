@@ -172,3 +172,5 @@ def optimize_lsds(
     if savedirs:
         path = f"{savepath}/LSDs_L{start_layer}_{end_layer}"
         torch.save(dnorm_mat, path)
+        
+    return dnorm_mat
