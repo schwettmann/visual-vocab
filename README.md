@@ -60,7 +60,7 @@ Example usage:
 ```python
 from visualvocab import generate_lsds 
 
-#Training parameters 
+# Training parameters 
 batch_size = 1                     # for generator, do not change this
 new_class  = 203                   # Places 365 image class (change)
 learning_rate = 0.01               # you can also try changing this as well
@@ -71,6 +71,7 @@ end_layer = 0                      # last layer for which you want to find LSDs.
 visualize = True                   # do you want to visualize each direction after it is generated? 
 savedirs = False                   # do you want to save the directions? 
 savepath = '/mydirectory/LSDs/'    # set to your own path where you want to save the directions
+
 z, _ = utils.prepare_z_y(batch_size, G.dim_z, n_classes, device=device, z_var=0.5)   #generate a random z to start 
 
 directions = optimize_lsds(z, num_dirs_per_layer, num_samples, start_layer, end_layer, visualize, learning_rate, new_class, savedirs, savepath)
